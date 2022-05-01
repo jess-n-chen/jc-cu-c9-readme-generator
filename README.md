@@ -9,7 +9,9 @@
 
 - [General Info](#general-information)
 - [Project Requirements](#project-requirements)
+- [Installation](#installation)
 - [Screenshots](#screenshots)
+- [Source Code](#source-code)
 - [Contact](#contact)
 
 ## General Information
@@ -52,7 +54,19 @@ WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
 ```
 
+## Installation
+
+1. Clone the repository to your local drive.
+2. Run `npm install` in order to install the npm package dependencies as specified in the package.json file.
+3. Run `node index.js` in the command line to use the application.
+
 ## Screenshots
+
+Below is a video tutorial on how to use the application. You will be prompted with a series of questions about your repository project. A README.md file will be generated in the `dist` directory after all questions are answers.
+
+## Source Code
+
+Source Code Reference: https://github.com/coding-boot-camp/potential-enigma
 
 ## Contact
 
