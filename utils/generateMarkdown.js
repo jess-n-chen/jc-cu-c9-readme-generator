@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   var badge = "";
@@ -51,57 +51,94 @@ function renderLicenseBadge(license) {
   if (!badge) {
     return "";
   } else {
-    return `![License](https://img.shields.io/badge/${badge})`;
+    return `[![License](https://img.shields.io/badge/${badge})]`;
   }
 }
 
-// TODO: Create a function that returns the license link
+// Function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   // Use Switch Case to Return License Link
   switch (license) {
     case "Apache":
-      return "https://opensource.org/licenses/Apache-2.0";
+      return "(https://opensource.org/licenses/Apache-2.0)";
     case "BSD 2":
-      return "https://opensource.org/licenses/BSD-2-Clause";
+      return "(https://opensource.org/licenses/BSD-2-Clause)";
     case "BSD 3":
-      return "https://opensource.org/licenses/BSD-3-Clause";
+      return "(https://opensource.org/licenses/BSD-3-Clause)";
     case "Boost":
-      return "https://www.boost.org/LICENSE_1_0.txt";
+      return "(https://www.boost.org/LICENSE_1_0.txt)";
     case "Creative Commons":
-      return "http://creativecommons.org/publicdomain/zero/1.0/";
+      return "(http://creativecommons.org/publicdomain/zero/1.0/)";
     case "Eclipse":
-      return "https://opensource.org/licenses/EPL-1.0";
+      return "(https://opensource.org/licenses/EPL-1.0)";
     case "GNU AGPL v3.0":
-      return "https://www.gnu.org/licenses/agpl-3.0";
+      return "(https://www.gnu.org/licenses/agpl-3.0)";
     case "GNU GPL v3.0":
-      return "https://www.gnu.org/licenses/gpl-3.0";
+      return "(https://www.gnu.org/licenses/gpl-3.0)";
     case "GNU GPL v2.0":
-      return "https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html";
+      return "(https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)";
     case "GNU LGPL v2.1":
-      return "https://www.gnu.org/licenses/lgpl-3.0";
+      return "(https://www.gnu.org/licenses/lgpl-3.0)";
     case "MIT":
-      return "https://opensource.org/licenses/MIT";
+      return "(https://opensource.org/licenses/MIT)";
     case "Mozilla":
-      return "https://opensource.org/licenses/MPL-2.0";
+      return "(https://opensource.org/licenses/MPL-2.0)";
     case "The Unlicense":
-      return "http://unlicense.org/";
+      return "(http://unlicense.org/)";
     default:
       return "";
   }
 }
 
-// TODO: Create a function that returns the license section of README
+// Function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (!license) {
+    return "";
+  } else if (license === "N/A") {
+    return "";
+  } else {
+    return `Licensed under the ${license} license.`;
+  }
+}
 
-// TODO: Create a function to generate markdown for README
+// Function to generate markdown for README
 function generateMarkdown(data) {
-  const licenseBadge = renderLicenseBadge(data.license);
-  const licenseLink = renderLicenseLink(data.license);
-  const licenseSection = renderLicenseSection(data.license);
-  return `# ${data.title}
+  return `
+  # ${data.title}
+  ${renderLicenseBadge(data.license)}${renderLicenseLink(data.license)}
 
+  ## Description
+  ${data.description}
+
+  ## Table of Contents
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#Usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+
+  ## Installation
+  ${data.installation}
+
+  ## Usage
+  ${data.usage}
+
+  ## License
+  ${renderLicenseSection(data.license)}
+
+  ## Contributing
+  ${data.contributors}
+
+  ## Tests
+  ${data.test}
+
+  ## Questions
+  Email me with any questions: ${data.email}
+  Github Profile: [${data.github}](https://github.com/${data.github})
 `;
 }
 
