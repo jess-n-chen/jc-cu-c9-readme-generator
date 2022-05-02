@@ -63,6 +63,7 @@ THEN I am taken to the corresponding section of the README
 ## Screenshots
 
 Below is a video tutorial on how to use the application. You will be prompted with a series of questions about your repository project. A README.md file will be generated in the `dist` directory after all questions are answers.
+https://drive.google.com/file/d/1rOTLzWyuP4AvFE94sykG_1ZyIlYxl--j/view
 
 ## Source Code
 
