@@ -86,8 +86,23 @@ const questions = [
   {
     type: "list",
     name: "license",
-    message: "Choose the appropriate license for your project: (Optional)",
-    choices: ["Apache", "Academic", "GNU", "ISC", "MIT", "Mozilla", "Open"],
+    message: "Choose the appropriate license for your project:",
+    choices: [
+      "N/A",
+      "Apache",
+      "BSD 2",
+      "BSD 3",
+      "Boost",
+      "Creative Commons",
+      "Eclipse",
+      "GNU AGPL v3.0",
+      "GNU GPL v3.0",
+      "GNU GPL v2.0",
+      "GNU LGPL v2.1",
+      "MIT",
+      "Mozilla",
+      "The Unlicense",
+    ],
   },
   {
     type: "input",
@@ -103,10 +118,26 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+    if (err) throw err;
+
+    console.log(
+      "Your README file has been generated! Check out the dist folder to see the output!"
+    );
+  });
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  inquirer.prompt(questions).then((markdownData) => {
+    const mdFile = generateMarkdown(markdownData);
+    console.log(mdFile);
+    // const fileName = "./dist/README.md";
+
+    // writeToFile(fileName, mdFile);
+  });
+}
 
 // Function call to initialize app
 init();
