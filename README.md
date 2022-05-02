@@ -3,7 +3,7 @@
 ## Columbia University Bootcamp - Node.js Challenge: Professional README Generator
 
 > This repository contains my command line application that generates a professional README file using a series of questions prompted to the end user.
-> Link to Application Walkthrough:
+> Link to Application Walkthrough: https://drive.google.com/file/d/1rOTLzWyuP4AvFE94sykG_1ZyIlYxl--j/view
 
 ## Table of Contents
 
